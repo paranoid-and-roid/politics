@@ -1,0 +1,49 @@
+<div id = "sidebar">
+        <ul id = "list">
+            <li id = "displayAll">See all constituencies</li>
+        </ul>
+    </div>
+
+	<div id = "intro">
+		<img class = "upper_image" src = "images/north_central.png" alt = "Cork North Central constituency" />
+		<img class = "upper_image" src = "images/south_central.png" alt = "Cork South Central constituency" />
+		<p>
+		A site for those who are trying to learn a little
+		more than they already know about politics,
+		beginning with the five constituencies
+		of County Cork.
+		Pay close attention. You may find this information 
+		useful when you play the game we have prepared for you.
+		Happy learning!
+		</p>
+		<img class = "lower_image" src = "images/east.png" alt = "Cork East constituency" />
+		<img class = "lower_image" src = "images/north_west.png" alt = "Cork North West constituency" />
+		<img class = "lower_image" src = "images/south_west.jpg" alt = "Cork South West constituency" />
+	</div>
+
+    <div id = "main">
+        <script type = "text/x-handlebars-template" id = "details">
+            {{#each this}}
+            <div></div>
+            <div></div>
+            <div class = "inner">
+                <div class = "image">
+                    <img src = "{{image}}" alt = "{{tdName}}" />
+                </div>
+                <dl>
+                    <dt><strong>{{tdName}}</strong></dt>
+
+                    <dd>
+                        <strong>Political Party:</strong> {{party}}
+                    </dd>
+                    <dd>
+                        <strong>Votes Received on First Count:</strong> {{firstCount}}
+                    </dd>
+                    <dd>
+                        <strong>Elected on:</strong> {{whenElected}}
+                    </dd>
+                </dl>
+            </div>
+            {{/each}}
+        </script>
+    </div>

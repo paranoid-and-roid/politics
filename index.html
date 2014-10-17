@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "en" ngApp = "politicsApp">
+<head>
+    <title>Constituencies</title>
+    <meta charset = "utf-8" />
+    <link rel = "stylesheet" href = "constituencies.css" />
+</head>
+
+<body ng-controller = "MainCtrl">
+
+<div id = "container">
+
+    <div id = "header">
+        <h1>Know your politicians</h1>
+    </div>
+
+    <div id = "nav">
+        <ul>
+            <li><a href = "index.html">Home</a></li>
+            <li><a href = "game.html">Play a Game</a></li>
+        </ul>
+    </div>
+
+    
+
+</div>
+
+		<script src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+        <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js'></script>
+        <script src='//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js'></script>   
+        <script src = "http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.min.js"></script>
+        <script src = "constituencies.js"></script>    
+		<script src="js/app.js"></script>
+		<script src="js/controllers/main-controller.js"></script>
+		<script src="js/controllers/home-controller.js"></script>
+		<script src="js/controllers/paint-controller.js"></script>
+		
+<script>
+    for(var i = 0; i < data.constituencies.length; i++) {
+        var tmpl = Handlebars.compile($("#details").html());
+        $("#main").append(tmpl(data.constituencies[i].details));
+    }
+    $("#displayAll").on("click", function() {
+        for(var i = 0; i < data.constituencies.length; i++) {
+            $("#main").append(tmpl(data.constituencies[i].details)).slideDown();
+        }
+    });
+</script>
+
+</body>
+
+</html>
